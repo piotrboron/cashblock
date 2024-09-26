@@ -1,0 +1,21 @@
+#     >>> cashblcok | rosesandsins <<<
+
+on load:
+    set {item::sztabka1} to iron ingot named "&6&lSztabka 1 wPLN" with lore "Uzyj aby dostac 1 wPLN!"
+    set {item::sztabka2} to iron ingot named "&6&lSztabka 10 wPLN" with lore "Uzyj aby dostac 10 wPLN!"
+
+command /dajsztabke:
+    permission: op
+    permission message: &cNie masz uprawnień!
+    trigger:
+        give {item::sztabka1} to player
+
+on rightclick with iron ingot:
+    if name of player's tool is "&6&lSztabka 1 wPLN":
+        remove 1 of player's tool from player
+        add 1 to {kasa::%player%}
+        send "Otrzymałeś 1 wPLN ze sztabki!" to player
+    else if name of player's tool is "&6&lSztabka 10 wPLN":
+        remove 1 of player's tool from player
+        add 10 to {kasa::%player%}
+        send "Otrzymałeś 10 wPLN ze sztabki!" to player

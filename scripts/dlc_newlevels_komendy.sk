@@ -1,0 +1,26 @@
+#           >>> cashblock  | rosesandsins  <<<
+
+command /pokazlevel [<offlineplayer>]:
+    permission: op
+    permission message: &cNie masz uprawnień!
+    trigger:
+        send "Poziom gracza %arg% to %{plevel::%arg%}%" to player
+
+command /setlevel [<offlineplayer>] [<number>]:
+    permission: op
+    permission message: &cNie masz uprawnień!
+    usage: /setlevel <player> <level>
+    trigger:
+        if arg-1 is not set:
+            send "&cMusisz wybrać gracza!"
+            stop
+        if arg-2 is not set:
+            send "&cMusisz wpisać level!"
+            stop
+        if arg-2 is not a number:
+            send "&cLevel musi być liczbą!"
+            stop
+        set {plevel::%arg-1%} to arg-2
+        send "&aUstawiono level %arg-1% na %arg-2%"
+        if arg-1 is online:
+            send "&aTwój level został ustawiony na %arg-2%" to arg-1

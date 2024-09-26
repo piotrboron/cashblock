@@ -1,0 +1,23 @@
+#     >>> cashblock | rosesandsins <<<
+
+variables:
+    {kasa::%player%} = 0
+    {denary::%player%} = 0
+
+options:
+    bc_msg_title: "&8=-=-=-=-=-=-=&cNazwaSerwera&8=-=-=-=-=-=-="
+    bc_msg: "&7Gracz &4%{_p}% &7właśnie wydropił &c%{_k}%"
+    title: "&aCashblock!"
+    subtitle: "&7Znalazłeś &c%{_k}% wPLN!"
+
+function drop(c: number, k: number, p: player):
+    chance of {_c}%:
+        add {_k} to {kasa::%{_p}%}
+        send title {@title} with subtitle {@subtitle} to {_p}
+        broadcast {@bc_msg_title}
+        broadcast {@bc_msg}
+        launch flickering ball large firework effect coloured blue and lime and red at {_p} timed 1
+        play sound "ENTITY_PLAYER_LEVELUP" to {_p}
+
+function isLevelTooLow(l: number, p: player) :: boolean:
+    return {plevel::%{_p}%} < {_l}

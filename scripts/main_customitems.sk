@@ -1,0 +1,20 @@
+#           >>>  cashblock  | rosesandsins  <<<
+on load:
+    set {item::devilaxe} to diamond pickaxe of efficiency 10, fortune 5 and knockback 5 named "&cTEST ITEM 1" with lore "TEST"
+    set {item::devilaxes} to diamond pickaxe of efficiency 20, fortune 10 and knockback 10 named "&cTEST ITEM 2" with lore "TEST2"
+    set {item::devillopata} to diamond shovel of efficiency 30, fortune 30 and knockback 10 named "&cTEST ITEM 3" with lore "TEST3"
+    set {item::kilofpremium} to diamond pickaxe of efficiency 5, fortune 3 and knockback 5 named "&6&lKilof Premium" with lore "TEST4"
+
+command /devil:
+    permission: op
+    permission message: &cNie masz uprawnień!
+    trigger:
+        give {item::devilaxe} to player
+        give {item::devilaxes} to player
+        give {item::devillopata} to player
+
+command /dajkilof:
+    permission: op
+    permission message: &cNie masz uprawnień!
+    trigger:
+        give {item::kilofpremium} to player

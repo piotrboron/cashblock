@@ -1,0 +1,121 @@
+#     >>> cashblock | rosesandsins <<<
+
+on break of fully grown wheat plant:
+    if isLevelTooLow(1, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of fully grown carrot plant:
+    if isLevelTooLow(8, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of fully grown potato plant:
+    if isLevelTooLow(12, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of fully grown beetroot plant:
+    if isLevelTooLow(17, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of coal ore:
+    if isLevelTooLow(25, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of iron ore:
+    if isLevelTooLow(35, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of copper ore:
+    if isLevelTooLow(50, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of gold ore:
+    if isLevelTooLow(70, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of redstone ore:
+    if isLevelTooLow(85, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of emerald ore:
+    if isLevelTooLow(100, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of lapis ore:
+    if isLevelTooLow(125, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of diamond ore:
+    if isLevelTooLow(175, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of nether gold ore:
+    if isLevelTooLow(225, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of nether quartz ore:
+    if isLevelTooLow(275, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)
+
+on break of amethyst block:
+    if isLevelTooLow(350, player) is true:
+        cancel event
+        send "&cZa mały level!" to player
+        stop
+    else:
+        weakReward(player)

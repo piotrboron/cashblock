@@ -1,0 +1,60 @@
+#     >>> cashblock | rosesandsins <<<
+
+command /wyplata:
+    permission: op
+    permission message: &cNie masz uprawnień!
+    trigger:
+        send "w celu wypłaty skontaktuj się z " to player
+        send "test#12345 na dc " to player
+
+command /kasa [<offlineplayer>]:
+    permission: op
+    permission message: &cNie masz uprawnień!
+    trigger:
+        if arg is not set:
+            send "&7Na swoim koncie masz &c%{kasa::%player%}% PLN" to player
+        else:
+            if {kasa::%arg%} >= 0:
+                send "&7Gracz &c%arg% &7na swoim koncie ma &c%{kasa::%arg%}% PLN" to player
+            else:
+                send "&7Gracz &c%arg% &7nie istnieje lub nie grał na serwerze" to player
+
+command /dajkase [<offlineplayer>] [<integer>]:
+    permission: op
+    permission message: &cNie masz uprawnień!
+    trigger:
+        if arg 1 is not set:
+            send "&cNie podałeś gracza!" to player
+        else if arg 2 is not set:
+            send "&cNie podałeś kwoty!" to player
+        else if arg 2 <= 0:
+            send "&cKwota musi być większa niż 0!" to player
+        else:
+            if {kasa::%arg 1%} is not set:
+                send "&cGracz &c%arg 1% &7nie istnieje lub nie ma konta!" to player
+            else:
+                add arg 2 to {kasa::%arg 1%}
+                send "&7Dodałeś &c%arg 2% PLN &7do konta gracza &c%arg 1%!" to player
+                send "&7Na twoim koncie pozostało &c%{kasa::%player%}% PLN" to player
+                send "&7Gratulacje, &c%arg 1% &7ma teraz &c%{kasa::%arg 1%}% PLN" to player
+
+command /usunkase [<offlineplayer>] [<integer>]:
+    permission: op
+    permission message: &cNie masz uprawnień!
+    trigger:
+        if arg 1 is not set:
+            send "&cNie podałeś gracza!" to player
+        else if arg 2 is not set:
+            send "&cNie podałeś kwoty!" to player
+        else if arg 2 <= 0:
+            send "&cKwota musi być większa niż 0!" to player
+        else:
+            if {kasa::%arg 1%} is not set:
+                send "&cGracz &c%arg 1% &7nie istnieje lub nie ma konta!" to player
+            else if {kasa::%arg 1%} < arg 2:
+                send "&cGracz &c%arg 1% &7nie ma wystarczającej ilości PLN!" to player
+            else:
+                remove arg 2 from {kasa::%arg 1%}
+                send "&7Usunąłeś &c%arg 2% PLN &7z konta gracza &c%arg 1%!" to player
+                send "&7Na twoim koncie pozostało &c%{kasa::%player%}% PLN" to player
+                send "&7Gratulacje, &c%arg 1% &7ma teraz &c%{kasa::%arg 1%}% PLN" to player

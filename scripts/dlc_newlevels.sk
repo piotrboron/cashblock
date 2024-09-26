@@ -1,0 +1,46 @@
+#     >>> cashblock | rosesandsins <<<
+
+variables:
+    {plevel::%player%} = 1
+    {pxp::%player%} = 0
+    {miningblockxp} = 2
+
+options:
+    xpmultiplier: 100
+    playerkillxp: 100
+    placingblockxp: 1
+    exprequired: 100
+    xpDiffPerLevel: 50
+
+function LevelUp(p: player):
+    add 1 to {plevel::%{_p}%}
+    set {pxp::%{_p}%} to 0
+    send title "&2&lLevel Up!" with subtitle "Nieźle!" to {_p} for 5 seconds
+
+function AddExp(p: player, am: number):
+    add {_am} to {pxp::%{_p}%}
+    while {pxp::%{_p}%} >= GetReqExp({_p}):
+        LevelUp({_p})
+
+function GetReqExp(p: player) :: number:
+    set {_level} to {plevel::%{_p}%}
+    if {_level} is not set:
+        set {_level} to 1
+    return {_level} * {@xpmultiplier}
+
+function GetPlayerStats(p: player, send: player):
+    send "" to {_send}
+    send "&8-------&7[&aMy Level&7]&8-------" to {_send}
+    send "&2Aktualny XP: &7%{pxp::%{_p}%} ? "0"%&8/&7%GetReqExp({_p})%" to {_send}
+    send "&2Aktualny level: &7%{plevel::%{_p}%} ? "1"%" to {_send}
+    send "&8-------&7[&aMy Level&7]&8-------" to {_send}
+    send "" to {_send}
+
+command /level [<player>]:
+    permission: op
+    permission message: &cNie masz uprawnień!
+    trigger:
+        if arg 1 is not set:
+            GetPlayerStats(player, player)
+        else:
+            GetPlayerStats(arg 1, player)

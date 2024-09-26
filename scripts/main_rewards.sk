@@ -1,0 +1,23 @@
+#     >>> cashblock |  rosesandsins <<<
+function weakReward(p: player):
+    if {kasa::%{_p}%} > 10:
+        drop(0.99, 0.01, {_p})
+        AddExp({_p}, 2)
+    else if {kasa::%{_p}%} > 7:
+        drop(5, 0.01, {_p})
+        AddExp({_p}, 2)
+    else if {kasa::%{_p}%} > 5:
+        drop(10, 0.05, {_p})
+        AddExp({_p}, 2)
+    else if {kasa::%{_p}%} > 3:
+        drop(20, 0.10, {_p})
+        AddExp({_p}, 2)
+    else if {kasa::%{_p}%} >= 0:
+        drop(70, 0.01, {_p})
+        AddExp({_p}, 2)
+    else if {kasa::%{_p}%} < 0:
+        broadcast "kasa gracza < 0 ! coś poszło nie tak!"
+
+function midReward(p: player):
+    if name of {_p}'s tool is "&6&lKilof Premium":
+        send "TEST_KILOF_PREMIUM" to {_p}

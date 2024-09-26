@@ -1,0 +1,4 @@
+#     >>> cashblock |  rosesandsins <<<
+
+every 2 minutes:
+	send "&aJestes na serwerze CashBlock NAZWASERWERA!" to all players

@@ -1,0 +1,12 @@
+#     >>> cashblock | rosesandsins <<<
+on join:
+    message "Witaj na serwerze!"
+    broadcast "%player% dołączył do serwera!"
+    if {plevel::%player%} is not set:
+        set {plevel::%player%} to 1
+    if {pxp::%player%} is not set:
+        set {pxp::%player%} to 0
+    if {kasa::%player%} is not set:
+        set {kasa::%player%} to 0
+    if {denary::%player%} is not set:
+        set {denary::%player%} to 0

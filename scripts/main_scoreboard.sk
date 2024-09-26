@@ -1,0 +1,17 @@
+#     >>> cashblock | rosesandsins <<<
+
+on join:
+  while player is online:
+    set title of player's scoreboard to "&cCASHBLOCK"
+    set line 6 of player's scoreboard to "&a"
+    set line 5 of player's scoreboard to "&fDenary: &b%{denary::%player%}%"
+    set line 4 of player's scoreboard to "&6✔ &fwPLN: &e%{kasa::%player%}%"
+    set line 3 of player's scoreboard to "&fZabojstwa: &c%{kills::%player's uuid%} ? 0%"
+    set line 2 of player's scoreboard to "&fSmierci: &c%{deaths::%player's uuid%} ? 0%"
+    set line 1 of player's scoreboard to "&7Serwer: NAZWA_SERWERA"
+    send action bar "&6&lPoziom: &e%{plevel::%player%}% &7| &aMasz &b%{pxp::%player%}% &7na &c%GetReqExp(player)% &7XP." to player
+    wait 1 seconds
+
+on death of player:
+  add 1 to {kills::%attacker's uuid%}
+  add 1 to {deaths::%victim's uuid%}
