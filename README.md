@@ -6,7 +6,10 @@ PL : Paczka pluginów na serwer Cashblock / MoneySMP dla nowoczesnych serwerów 
 # note :
 guaranteed to work on 1.20.6, for other versions try ViaBackwards and ViaVersion
 
-# Requirements:
+# challenges && problems :
+none
+
+# dependencies:
 
 PaperMC
 AntiPopup
