@@ -3,6 +3,9 @@
 EN : A pack of Cashblock / MoneySMP plugins for modern Minecraft servers. Made with Skript.
 PL : Paczka pluginów na serwer Cashblock / MoneySMP dla nowoczesnych serwerów Minecraft. Pluginy napisane w Skript.
 
+# note :
+guaranteed to work on 1.20.6, for other versions try ViaBackwards and ViaVersion
+
 # Requirements:
 
 PaperMC
